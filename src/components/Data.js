@@ -59,7 +59,7 @@ export const courses = [
         name: 'Школа DevOps, Санкт-Петербург',
         className: 'highlight',
         details: [
-            { text: 'DevOps Старт <a href={`${process.env.PUBLIC_URL}/certificates/devOPS.png`} target="_blank">(сертификат)</a>', className: 'emph' }
+            { text: 'DevOps Старт <a href={`${process.env.PUBLIC_URL}/devOPS.png`} target="_blank">(сертификат)</a>', className: 'emph' }
         ]
     },
     {
