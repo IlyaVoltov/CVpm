@@ -38,7 +38,7 @@ function LeftColumn() {
   return (
     <div className="left-column">
       <div className="profile">
-        <img src="/short_photo.jpg" alt="Profile Photo" className="profile-photo" />
+      <img src={`${process.env.PUBLIC_URL}/short_photo.jpg`} alt="Short photo" className="profile-photo" />
         <h1>Илья Волтов</h1>
         <div className="position">Менеджер проектов<br />Product owner</div>
       </div>
