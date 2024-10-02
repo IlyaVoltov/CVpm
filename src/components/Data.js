@@ -50,8 +50,8 @@ export const courses = [
         name: 'Kaggle',
         className: 'highlight',
         details: [
-            { text: 'Advanced SQL <a href={`${process.env.PUBLIC_URL}/AdvancedSQL.png`} target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
-            { text: 'Data Cleaning <a href="/DataCleaning.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
+            { text: 'Advanced SQL <a src={`${process.env.PUBLIC_URL}/AdvancedSQL.png`} target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
+            { text: `Data Cleaning <a href="${process.env.PUBLIC_URL}/DataCleaning.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>`, className: 'emph' },
             { text: 'Python <a href="/Python.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
         ],
     },
