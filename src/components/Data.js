@@ -50,16 +50,16 @@ export const courses = [
         name: 'Kaggle',
         className: 'highlight',
         details: [
-            { text: 'Advanced SQL <a href={`${process.env.PUBLIC_URL}/certificates/AdvancedSQL.png`} target="_blank">(сертификат)</a>', className: 'emph' },
-            { text: 'Data Cleaning <a href={`${process.env.PUBLIC_URL}/certificates/DataCleaning.png`} target="_blank">(сертификат)</a>', className: 'emph' },
-            { text: 'Python <a href={`${process.env.PUBLIC_URL}/certificates/Python.png`} target="_blank">(сертификат)</a>', className: 'emph' },
+            { text: 'Advanced SQL <a href="/AdvancedSQL.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
+            { text: 'Data Cleaning <a href="/DataCleaning.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
+            { text: 'Python <a href="/Python.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
         ],
     },
     {
         name: 'Школа DevOps, Санкт-Петербург',
         className: 'highlight',
         details: [
-            { text: 'DevOps Старт <a href={`${process.env.PUBLIC_URL}/devOPS.png`} target="_blank">(сертификат)</a>', className: 'emph' }
+            { text: 'DevOps Старт <a href="/devOPS.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' }
         ]
     },
     {
@@ -75,7 +75,7 @@ export const courses = [
         name: 'Sololearn',
         className: 'highlight',
         details: [
-            { text: 'HTML <a href={`${process.env.PUBLIC_URL}/certificates/HTML.jpg`} target="_blank">(сертификат)</a>', className: 'emph' }
+            { text: 'HTML <a href="/HTML.jpg" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' }
         ]
     },
 ];
@@ -85,11 +85,11 @@ export const conferences = [
         name: 'в качестве докладчика',
         className: 'highlight',
         details: [
-            { text: 'CIGRE, INFORMATION SYSTEMS AND TELECOMUNICATION, 2022, Paris <a href="/certificates/template.pdf" target="_blank">(презентация)</a>', className: 'emph' },
+            { text: 'CIGRE, INFORMATION SYSTEMS AND TELECOMUNICATION, 2022, Paris <a href="/template.pdf" target="_blank" rel="noopener noreferrer">(презентация)</a>', className: 'emph' },
             { text: 'Energynet.CØN 2021, online', className: 'emph' },
             { text: 'Energynet.CØN 2020, online', className: 'emph' },
             { text: 'Power BI meetup 2020, Санкт-Петербург', className: 'emph' },
-            { text: 'УМНИК Энерджинет 2019, Москва <a href={`${process.env.PUBLIC_URL}/certificates/umnik.png`} target="_blank">(сертификат)</a>', className: 'emph' },
+            { text: 'УМНИК Энерджинет 2019, Москва <a href="/umnik.png" target="_blank" rel="noopener noreferrer">(сертификат)</a>', className: 'emph' },
             { text: '33rd IBIMA Conference: 10-11 April 2019, Granada, Spain', className: 'emph' },
             { text: 'Научная конференция "Промышленный менеджмент, экономика и экология - 2017", Санкт-Петербург', className: 'emph' },
         ],
