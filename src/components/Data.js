@@ -85,7 +85,7 @@ export const conferences = [
         name: 'в качестве докладчика',
         className: 'highlight',
         details: [
-            { text: 'CIGRE, INFORMATION SYSTEMS AND TELECOMUNICATION, 2022, Paris <a href={`${process.env.PUBLIC_URL}/certificates/template.pdf`} target="_blank">(презентация)</a>', className: 'emph' },
+            { text: 'CIGRE, INFORMATION SYSTEMS AND TELECOMUNICATION, 2022, Paris <a href="/certificates/template.pdf" target="_blank">(презентация)</a>', className: 'emph' },
             { text: 'Energynet.CØN 2021, online', className: 'emph' },
             { text: 'Energynet.CØN 2020, online', className: 'emph' },
             { text: 'Power BI meetup 2020, Санкт-Петербург', className: 'emph' },
