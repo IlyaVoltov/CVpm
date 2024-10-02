@@ -55,12 +55,6 @@ function LeftColumn() {
           <h2>Контакты</h2>
           <div className="info-section">
             <div className="info-section link">
-              <i className="fas fa-phone"></i>
-              <a target="_blank" rel="noopener noreferrer" href="tel:+79817956314">
-                <span>+7(981)795-63-14</span>
-              </a>
-            </div>
-            <div className="info-section link">
               <i className="fas fa-envelope"></i>
               <a target="_blank" rel="noopener noreferrer" href="mailto:ivoltovp@gmail.com">
                 <span>ivoltovp@gmail.com</span>
