@@ -1,0 +1,101 @@
+:root {
+  --primary-color: #4682bf; /* Цвет прогресс-бара */
+  --skeleton-color: #e0e0e0; /* Цвет скелета */
+  --text-color: #666;
+  --font-size-small: 0.9rem;
+}
+
+.pg-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pg-list li {
+  margin-bottom: 15px;
+  transition: background-color 0.4s; /* Добавляем плавный переход */
+}
+
+.pg-list li:hover {
+  background-color: rgba(142, 202, 241, 0.1); /* Светлый фон при наведении */
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.skill-header i {
+  margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+.skill-header span {
+  font-weight: bold;
+}
+
+.skill-header small {
+  margin-left: 4rem; /* Установите нужное значение для отступа */
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+}
+
+.sb-skeleton {
+  position: relative;
+  background-color: var(--skeleton-color);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.skillbar {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0; /* Начальная ширина — 0% */
+  border-radius: 5px;
+  transition: width 2s ease-in-out; /* Плавное изменение ширины */
+  position: relative;
+}
+
+/* Добавим класс для анимации */
+.skillbar.animate {
+  width: var(--pgbar-length); /* Окончательная длина бара будет зависеть от переменной */
+}
+
+.percentage-label {
+  position: absolute;
+  right: 10px; /* Положение текста с процентом */
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: #fff; /* Цвет текста */
+  font-size: 70%;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  .skill-header {
+    flex-direction: column; /* Ставим элементы друг под другом */
+    align-items: flex-start; /* Выравнивание по левому краю */
+  }
+
+  .skill-header span {
+    margin-bottom: 5px; /* Увеличиваем отступ между названием и описанием */
+  }
+
+  .skill-header small {
+    margin-left: 0; /* Убираем левый отступ для описания */
+    font-size: var(--font-size-small); /* Уменьшаем размер шрифта */
+  }
+
+  .percentage-label {
+    font-size: 8px; /* Уменьшаем размер шрифта для процентов */
+  }
+
+  .sb-skeleton {
+    height: 8px; /* Уменьшаем высоту скилетона на мобильных */
+  }
+}

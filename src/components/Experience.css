@@ -1,0 +1,139 @@
+.title-question {
+  margin-left: 10%; /* Автоматическое выравнивание */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: var(--profile-theme);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.title-question i {
+  color: white;
+  font-size: 1.2rem; /* Увеличение размера шрифта для лучшей видимости */
+  text-align: center;
+}
+
+.timeline-block {
+  margin-bottom: 20px;
+  position: relative; /* Это важно для позиционирования popup */
+  padding-left: 30px;
+}
+
+.timeline-block:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.timeline-block h1 {
+  font-size: 1rem;
+  margin: 5px 0;
+  transition: color 0.3s; /* Плавный переход для цвета */
+}
+
+.timeline-block p,
+.timeline-block time {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: var(--color-gray-dark-2);
+}
+
+/* Стили для контейнера с popup */
+.hover-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  top: 100%; /* Расположение под элементом */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translateX(-50%) translateY(10px); /* Центрируем и поднимаем попап */
+  background-color: #f9f9f9; /* Цвет фона popup */
+  padding: 10px 15px; /* Увеличение отступов для удобства */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  width: max-content; /* Автоматически адаптируется под содержимое */
+  max-width: 280px; /* Ограничиваем ширину для длинного текста */
+  white-space: normal; /* Позволяет переносить текст */
+  overflow-wrap: break-word; /* Переносим длинные слова */
+}
+
+/* Анимация появления popup */
+.hover-container:hover .popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  transition-delay: 0.1s; /* Добавим небольшую задержку для плавного появления */
+}
+
+.popup-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.popup-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Стиль для временной шкалы */
+.timeline-block::before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: 3px solid var(--timeline-circle-theme);
+  border-radius: 50%;
+  left: -10px;
+  top: -5px;
+}
+
+.timeline-block::after {
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: 100%;
+  background-color: var(--timeline-circle-theme);
+  left: -1px;
+  top: 13px;
+}
+
+.timeline-block:hover h1 {
+  color: var(--color-tiffany);
+}
+
+.timeline-block:hover::before {
+  animation: circle 1.2s infinite;
+}
+
+@media (max-width: 768px) {
+  .popup {
+    display: none; /* скрываем popup на мобильных устройствах */
+  }
+
+  .timeline-block h1 {
+    font-size: 0.9rem; /* уменьшаем размер заголовка на мобильных устройствах */
+  }
+
+  .timeline-block p,
+  .timeline-block time {
+    font-size: 0.8rem; /* уменьшаем размер текста на мобильных устройствах */
+  }
+
+  .title-question {
+    display: none; /* скрываем на мобильных устройствах */
+  }
+
+  .timeline-block::before {
+    width: 10px; /* уменьшаем размер точки на мобильных устройствах */
+    height: 10px;
+  }
+}

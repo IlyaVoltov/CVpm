@@ -1,0 +1,80 @@
+/* Оформление модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Тёмный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow-y: auto;
+    max-height: 80vh;
+
+   /* Скрываем скроллбар на разных браузерах */
+   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none; /* Internet Explorer и Edge */
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+  }
+
+  .close-button:hover {
+    color: #333;
+  }
+
+  /* Стили для списков в модальном окне */
+  .modal ul {
+    list-style-type: none; /* Убираем стандартные маркеры */
+    padding: 0; /* Убираем отступы */
+    margin: 0;
+  }
+
+  .modal ul li {
+    background-color: #f9f9f9; /* Светлый фон для каждого элемента списка */
+    margin: 10px 0; /* Отступ между элементами списка */
+    padding: 15px; /* Внутренние отступы */
+    border-radius: 8px; /* Закруглённые углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень под элементом */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Плавные переходы */
+  }
+
+  .modal ul li:hover {
+    background-color: #f0f0f0; /* Изменение фона при наведении */
+    transform: translateY(-3px); /* Легкий подъём при наведении */
+  }
+
+  .modal ul li ul {
+    padding-left: 20px; /* Отступ для вложенных списков */
+  }
+
+  .modal ul li ul li {
+    background-color: #ffffff; /* Фон для вложенных элементов */
+    margin-top: 5px; /* Отступ между вложенными элементами */
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .modal::-webkit-scrollbar {
+   display: none; /* Chrome, Safari и Opera */
+  }

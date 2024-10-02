@@ -1,0 +1,220 @@
+/* Левая колонка для "О себе", фото и контактов */
+.left-column {
+    flex: 0 0 30%;
+    background-color: var(--color-gray-light-1);
+    padding: 3%;
+    box-shadow: 5px 0px 15px 0px var(--color-gray-light-3);
+  }
+
+  .profile h1 {
+    margin: 0;
+  }
+
+  /* Фото в профиле */
+  .profile-photo {
+    width: 100%;
+    border-radius: 45%;
+    margin-bottom: 5%;
+  }
+
+  .profile-photo:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .position {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 3%;
+  }
+
+  /* Улучшение для секции технологического стека */
+  .intro-stack {
+    background-color: var(--color-gray-light-1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .techStack ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .techStack ul li {
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .techStack ul li i {
+    margin-right: 10px;
+    color: #4682bf;
+  }
+
+  .techStack li:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  h4 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+  }
+
+  /* Секция дополнительной информации */
+  .extraInf-section {
+    background-color: var(--color-gray-light-1);
+    padding: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .extraInf-section .modal-button {
+    background-color: var(--profile-theme);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+
+  .extraInf-section .modal-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Профиль */
+  .profile {
+    position: relative;
+    background-color: var(--profile-theme);
+    padding: var(--spacing-large) var(--spacing-medium);
+    margin-bottom: var(--spacing-large);
+    text-align: center;
+    user-select: none;
+    border-radius: 5%;
+    color: #fff;
+  }
+
+  .info-section {
+    margin: 1rem 0;
+  }
+
+  .info-section .link {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .info-section .link i {
+    color: var(--profile-theme);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .info-section .link a {
+    color: var(--profile-theme);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .info-section .link a:hover {
+    color: var(--color-tiffany);
+  }
+
+  .parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .left-column {
+      flex: 0 0 100%;
+      padding: 5%;
+    }
+
+    .extraInf-section {
+      padding: 5%;
+    }
+
+    .techStack ul li {
+      width: 100%;
+    }
+  }
+
+  /* Секции "О себе" и "Контакты" */
+  .about-section, .contact-section {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .contact-section .info-section i {
+    font-size: 1.2rem;
+    color: #4682bf;
+    margin-right: 10px;
+  }
+
+  .contact-section .info-section a:hover {
+    color: #094585;
+  }
+
+  .contact-section .info-section a span {
+    font-weight: 500;
+  }
+
+  .contact-section .info-section a:hover span {
+    text-decoration: underline;
+  }
+
+  .highlight {
+    font-weight: bold;
+  }
+
+  ul li.emph {
+    font-weight: 600;
+    background-color: #e0f7fa; /* Лёгкий голубой фон */
+    padding: 10px;
+    border-left: 5px solid #c0c8f5;
+    margin-bottom: 10px;
+  }
+
+  .modal-button:focus {
+    outline: 3px solid #0056b3;
+  }

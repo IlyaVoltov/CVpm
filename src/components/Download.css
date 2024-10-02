@@ -1,0 +1,33 @@
+/* Секция для кнопки загрузки резюме */
+.download-section {
+    display: flex; /* Используем Flexbox для расположения кнопок */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: flex-end; /* Выравнивание кнопок по левому краю */
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex; /* Используйте Flexbox для расположения кнопок в ряд */
+    flex-direction: column; /* Располагаем кнопки вертикально */
+}
+
+.download-button, .feedback-button {
+    width: 200px; /* Фиксированная ширина кнопок */
+    padding: 10px; /* Убираем горизонтальный отступ */
+    font-size: 16px; /* Размер шрифта */
+    color: #fff; /* Цвет текста */
+    background-color: #4682bf; /* Цвет фона кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругление углов */
+    text-align: center; /* Центрируем текст внутри кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s; /* Плавный эффект при наведении */
+    margin-bottom: 10px; /* Отступ между кнопками */
+}
+
+.download-button:hover, .feedback-button:hover {
+    background-color: #0056b3; /* Темнее при наведении */
+    cursor: pointer;
+}
+
+/* Отменяем медиазапросы для кнопок, чтобы они всегда имели фиксированную ширину */
