@@ -57,7 +57,7 @@ function Experience() {
             onMouseLeave={handleMouseLeave}
           >
             <p>GB Consulting (data-driven solutions)</p>
-            <p>Оптимизация процесса взаимодействия между отделами разработки</p>
+            <p>Оптимизация процесса взаимодействия между отделами разработки, составление PDP</p>
             <Popup
               header="Обязанности:"
               content={
