@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Style.css';
 import LeftColumn from './components/LeftColumn';
 import Download from './components/Download';
+import Feedback from './components/Feedback';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -14,6 +15,7 @@ function App() {
       <LeftColumn />
       <div className="right-column">
         <Download />
+        <Feedback />
         <Education />
         <Experience />
         <Skills />

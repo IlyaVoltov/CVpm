@@ -78,3 +78,32 @@
   .modal::-webkit-scrollbar {
    display: none; /* Chrome, Safari и Opera */
   }
+
+
+  /* Оформление полей ввода */
+.modal input,
+.modal textarea {
+  width: 100%; /* Полная ширина */
+  padding: 12px 15px; /* Внутренние отступы */
+  margin-bottom: 15px; /* Отступ снизу */
+  border: 1px solid #ddd; /* Легкая граница */
+  border-radius: 8px; /* Скругленные углы */
+  background-color: #f9f9f9; /* Светлый фон */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для полей ввода */
+  font-size: 16px; /* Размер шрифта */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Плавный переход */
+}
+
+/* Стили при наведении на input/textarea */
+.modal input:focus,
+.modal textarea:focus {
+  background-color: #fff; /* Белый фон при фокусе */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+  outline: none; /* Убираем стандартный outline */
+}
+
+/* Оформление textarea */
+.modal textarea {
+  height: 120px; /* Высота текстовой области */
+  resize: vertical; /* Разрешаем изменение размера только по вертикали */
+}
