@@ -1,10 +1,15 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+import Modal from './Modal'; // Подключаем модальный компонент
+import './Download.css'; // Подключаем стили для кнопок и формы
 import './Modal.css';
+import Toast from './Toast'; // Подключаем Toast
 
 const FeedbackForm = () => {
   const form = useRef();
   const [isModalOpen, setModalOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [showToast, setShowToast] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -12,11 +17,13 @@ const FeedbackForm = () => {
     emailjs.sendForm('service_wa9d4xj', 'template_4q7hatv', form.current, 'n6oF9a_FFDgPU6VLy')
       .then((result) => {
         console.log(result.text);
-        alert('Ваше сообщение отправлено! Я Вам отвечу в течение суток.');
+        setToastMessage('Ваше сообщение отправлено! Я Вам отвечу в течение суток.');
+        setShowToast(true);
         setModalOpen(false); // Закрыть модальное окно после успешной отправки
       }, (error) => {
         console.log(error.text);
-        alert('Ошибка. Повторите попытку позже.');
+        setToastMessage('Ошибка. Повторите попытку позже.');
+        setShowToast(true);
       });
   };
 
@@ -24,24 +31,34 @@ const FeedbackForm = () => {
     setModalOpen(!isModalOpen);
   };
 
+  const closeToast = () => {
+    setShowToast(false);
+  };
+
   return (
     <>
-      <button onClick={toggleModal}>Написать мне</button>
-
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={toggleModal}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={toggleModal}>&times;</button>
-            <h2>Напишите мне</h2>
-            <form ref={form} onSubmit={sendEmail}>
-              <input type="text" name="user_name" placeholder="Ваше имя" required />
-              <input type="email" name="user_email" placeholder="Ваш email" required />
-              <textarea name="message" placeholder="Ваше сообщение" required />
-              <button type="submit">Отправить</button>
-            </form>
+      {/* Кнопка для открытия модального окна */}
+      <div className="download-section">
+        <div className="button-container">
+          <div className="download-button" onClick={toggleModal}>
+            Написать мне
           </div>
         </div>
-      )}
+      </div>
+
+      {/* Модальное окно с формой обратной связи */}
+      <Modal isOpen={isModalOpen} onClose={toggleModal}>
+        <h2>Напишите мне</h2>
+        <form ref={form} onSubmit={sendEmail}>
+          <input type="text" name="user_name" placeholder="Ваше имя" required />
+          <input type="email" name="user_email" placeholder="Ваш email" required />
+          <textarea name="message" placeholder="Ваше сообщение" required />
+          <button type="submit" className="submit-button">Отправить</button>
+        </form>
+      </Modal>
+
+      {/* Кастомное уведомление */}
+      {showToast && <Toast message={toastMessage} onClose={closeToast} />}
     </>
   );
 };
