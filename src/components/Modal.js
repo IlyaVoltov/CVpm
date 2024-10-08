@@ -1,36 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import './Modal.css';
 
 const Modal = ({ isOpen, onClose, closeOnBackdropClick = true, children }) => {
   // Закрытие при нажатии на Escape
-  useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    };
+  const handleEscape = useCallback((event) => {
+    if (event.key === 'Escape') {
+      onClose();
+    }
+  }, [onClose]);
 
+  useEffect(() => {
     document.addEventListener('keydown', handleEscape);
 
     // Убираем обработчик после закрытия модального окна
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [onClose]);
-
-  // Устанавливаем фокус на кнопку закрытия при открытии окна
-  useEffect(() => {
-    if (isOpen) {
-      const closeButton = document.querySelector('.close-button');
-      if (closeButton) closeButton.focus();
-    }
-  }, [isOpen]);
+  }, [handleEscape]);
 
   // Если модальное окно закрыто, не рендерим его
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay show" onClick={closeOnBackdropClick ? onClose : undefined}>
+    <div
+      className="modal-overlay show"
+      onClick={closeOnBackdropClick ? onClose : undefined}
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-content"
+    >
       <div className="modal show" onClick={(e) => e.stopPropagation()}>
         <button
           onClick={onClose}
@@ -38,9 +36,9 @@ const Modal = ({ isOpen, onClose, closeOnBackdropClick = true, children }) => {
           aria-label="Закрыть модальное окно"
           tabIndex="0"
         >
-          ✖
+          X
         </button>
-        {children}
+        <div id="modal-content">{children}</div>
       </div>
     </div>
   );

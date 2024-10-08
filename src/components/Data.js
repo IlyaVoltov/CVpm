@@ -70,6 +70,7 @@ export const courses = [
         name: 'Stepik',
         className: 'highlight',
         details: [
+            { text: 'Профессия Middle&Senior Product Manager', className: 'emph' },
             { text: 'Поколение Python', className: 'emph' },
             { text: 'Интерактивный тренажер по SQL', className: 'emph' },
         ],

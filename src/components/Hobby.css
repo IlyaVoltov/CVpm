@@ -10,7 +10,6 @@
 .favor-list > li {
   border: 0.1px solid var(--color-gray-dark-2); /* Более тонкая и светлая рамка */
   border-radius: 12px; /* Немного увеличен радиус для более мягких углов */
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,8 +39,8 @@
 /* Адаптивность для маленьких экранов */
 @media (max-width: 768px) {
   .favor-list > li {
-    width: 115px; /* Фиксированная ширина для мобильных устройств */
-    height: 100px; /* Фиксированная высота для мобильных устройств */
+    width: 140px; /* Фиксированная ширина для мобильных устройств */
+    height: 110px; /* Фиксированная высота для мобильных устройств */
   }
 
   .favor-list > li > i {

@@ -14,7 +14,12 @@ const FeedbackForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_wa9d4xj', 'template_4q7hatv', form.current, 'n6oF9a_FFDgPU6VLy')
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_EMAILJS_USER_ID
+  )
       .then((result) => {
         console.log(result.text);
         setToastMessage('Ваше сообщение отправлено! Я Вам отвечу в течение суток.');
