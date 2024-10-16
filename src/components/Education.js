@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Education() {
     return (
-        <section class="detail-section edu">
+        <section className="detail-section edu">
         <div className="detail-title">
             <div className="title-icon">
                 <i className="fas fa-user-graduate"></i>
