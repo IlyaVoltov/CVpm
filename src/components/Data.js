@@ -70,6 +70,7 @@ export const courses = [
         name: 'Stepik',
         className: 'highlight',
         details: [
+            { text: `${createLink(`${process.env.PUBLIC_URL}/econom.pdf`, ' Introductory Econometrics: a Practical Approach')}`, className: 'emph' },
             { text: 'Профессия Middle&Senior Product Manager', className: 'emph' },
             { text: 'Поколение Python', className: 'emph' },
             { text: 'Интерактивный тренажер по SQL', className: 'emph' },

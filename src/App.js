@@ -1,8 +1,8 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Style.css';
+import TopBar from './components/TopBar';
 import LeftColumn from './components/LeftColumn';
-import Download from './components/Download';
 import Feedback from './components/Feedback';
 import Education from './components/Education';
 import Experience from './components/Experience';
@@ -12,9 +12,9 @@ import Hobby from './components/Hobby';
 function App() {
   return (
     <div className="container">
+      <TopBar />
       <LeftColumn />
       <div className="right-column">
-        <Download />
         <Feedback />
         <Education />
         <Experience />

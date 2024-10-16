@@ -1,0 +1,90 @@
+.top-bar {
+    width: 100%;
+    background: rgba(72, 130, 191, 0.7); /* Полупрозрачный фон с цветом */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    margin-bottom: 10px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px; /* Закругленные углы */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: sticky; /* Закрепляем наверху при прокрутке */
+    top: 0; /* Когда скроллим, панель "прилипает" к верху */
+    z-index: 10;
+  }
+
+/* Навигационное меню */
+.nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  /* Стили для горизонтального меню */
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Используем flex для горизонтального отображения */
+    justify-content: flex-end; /* Выровнять элементы в конце */
+    align-items: center; /* Центрирование элементов по вертикали */
+  }
+
+  /* Элементы списка */
+  .list li {
+    margin-left: 20px; /* Пространство между элементами списка */
+  }
+
+  /* Стили ссылок в меню */
+
+  .modal-button {
+    color: #fff; /* Белый цвет текста */
+    cursor: pointer; /* Курсор указателя */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон кнопок */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  /* Анимация при наведении */
+  .nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px); /* Плавное поднятие */
+  }
+
+  /* Адаптивные стили для мобильных устройств */
+  @media (max-width: 768px) {
+    .top-bar {
+        padding: 10px;
+        flex-direction: column; /* Изменяем направление на колонку */
+        align-items: center; /* Выровнять элементы*/
+        position: relative; /* Убираем фиксацию для мобильных устройств */
+        top: auto; /* Отменяем фиксированную позицию */
+    }
+
+    .nav-menu {
+        justify-content: center; /* Центрируем меню на мобильных */
+        width: 100%; /* Задаем ширину 100% для меню */
+        margin-top: 10px; /* Добавляем пространство между панелью и меню */
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Выстраиваем элементы в колонку для мобильных */
+        width: 100%; /* Устанавливаем ширину на 100% */
+        align-items: center; /* Выровнять элементы списка */
+    }
+
+    .nav-menu li {
+        margin: 10px 0; /* Отступы сверху и снизу для каждого элемента */
+    }
+
+    .nav-menu .modal-button {
+        font-size: 0.9rem; /* Уменьшаем размер шрифта для мобильных */
+        padding: 8px 12px; /* Уменьшаем отступы */
+    }
+  }
