@@ -24,3 +24,29 @@
 }
 
 /* Отменяем медиазапросы для кнопок, чтобы они всегда имели фиксированную ширину */
+
+.toast-message {
+    position: fixed;
+    bottom: 20px; /* Располагаем в нижней части экрана */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+    color: #fff; /* Белый текст */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Анимация появления и исчезновения */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 1;
+    }
+  }

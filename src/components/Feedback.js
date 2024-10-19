@@ -8,65 +8,68 @@ const FeedbackForm = ({ isOpen, onClose }) => {
   const form = useRef();
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      form.current,
-      process.env.REACT_APP_EMAILJS_USER_ID
-    )
+    // Проверка наличия переменных среды
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+
+    if (!serviceId || !templateId || !userId) {
+      console.error('Не установлены необходимые переменные среды для EmailJS');
+      setToastMessage('Ошибка настройки отправки. Пожалуйста, свяжитесь с администратором.');
+      setShowToast(true);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    emailjs.sendForm(serviceId, templateId, form.current, userId)
       .then((result) => {
-        console.log(result.text);
         setToastMessage('Ваше сообщение отправлено! Я Вам отвечу в течение суток.');
-        setShowToast(true); // Устанавливаем showToast в true
-        console.log('showToast должен быть теперь true:', true); // Логируем новое состояние
-
-        // Закрываем модальное окно после успешной отправки
+        setShowToast(true);
         setTimeout(() => {
           onClose();
-        }, 0); // Используем setTimeout для отложенного вызова
-      }, (error) => {
-        console.log(error.text);
+          setIsSubmitting(false);
+        }, 1500);
+      })
+      .catch((error) => {
         setToastMessage('Ошибка. Повторите попытку позже.');
-        setShowToast(true); // Устанавливаем showToast в true
-        console.log('showToast должен быть теперь true:', true); // Логируем новое состояние
-
-        // Закрываем модальное окно после неудачи
-        setTimeout(() => {
-          onClose();
-        }, 0); // Используем setTimeout для отложенного вызова
+        setShowToast(true);
+        setIsSubmitting(false);
       });
   };
 
-  // Таймер для автоматического скрытия Toast через 3 секунды
   useEffect(() => {
     if (showToast) {
       const timer = setTimeout(() => {
         setShowToast(false);
-      }, 3000); // Показывать уведомление 3 секунды
+      }, 3000);
 
-      return () => clearTimeout(timer); // Очистить таймер при размонтировании
+      return () => clearTimeout(timer);
     }
   }, [showToast]);
 
-  // Проверка состояния showToast
-  console.log('showToast:', showToast); // Это выведет текущее состояние showToast
-
   return (
     <>
-      {/* Модальное окно с формой обратной связи */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <h2>Напишите мне</h2>
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name="user_name" placeholder="Ваше имя" required />
           <input type="email" name="user_email" placeholder="Ваш email" required />
           <textarea name="message" placeholder="Ваше сообщение" required />
-          <button type="submit" className="submit-button">Отправить</button>
+          <button type="submit" className="submit-button" disabled={isSubmitting}>
+            {isSubmitting ? 'Отправка...' : 'Отправить'}
+          </button>
         </form>
-        {showToast && <p>{toastMessage}</p>} {/* Вывод сообщения без Toast */}
+        {showToast && (
+          <div className="toast-message">
+            {toastMessage}
+          </div>
+        )}
       </Modal>
     </>
   );
