@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Education() {
+    const { t } = useTranslation();
+
     return (
         <section className="detail-section edu">
-        <div className="detail-title">
-            <div className="title-icon">
-                <i className="fas fa-user-graduate"></i>
+            <div className="detail-title">
+                <div className="title-icon">
+                    <i className="fas fa-user-graduate"></i>
+                </div>
+                <span>{t('education.title')}</span>
             </div>
-            <span>Образование</span>
-        </div>
-        <div className="detail-content">
-            <div className="timeline-block">
-                <h1>Эконометрика и статистический анализ</h1>
-                <p>Санкт-Петербургский государственный экономический университет, Санкт-Петербург</p>
-                <p>магистр</p>
-                <time>2008 - 2013</time>
+            <div className="detail-content">
+                <div className="timeline-block">
+                    <h1>{t('education.degree1.title')}</h1>
+                    <p>{t('education.degree1.university')}</p>
+                    <p>{t('education.degree1.degree')}</p>
+                    <time>{t('education.degree1.years')}</time>
+                </div>
+                <div className="timeline-block">
+                    <h1>{t('education.degree2.title')}</h1>
+                    <p>{t('education.degree2.university')}</p>
+                    <p>{t('education.degree2.degree')}</p>
+                    <time>{t('education.degree2.years')}</time>
+                </div>
             </div>
-            <div className="timeline-block">
-                <h1>Институт промышленного менеджмента, экономики и торговли</h1>
-                <p>Санкт-Петербургский политехнический университет Петра Великого, Санкт-Петербург</p>
-                <p>аспирант</p>
-                <time>2017</time>
-            </div>
-        </div>
-    </section>
+        </section>
     );
 }
 

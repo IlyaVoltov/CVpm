@@ -1,26 +1,30 @@
-// src/components/LeftColumn.js
 import React from 'react';
 import './LeftColumn.css';
+import { useTranslation } from 'react-i18next';
 
 function LeftColumn() {
+    const { t } = useTranslation();
+
+    const position = t('position');
+
     return (
         <div className="left-column">
             <div className="profile">
                 <img src={`${process.env.PUBLIC_URL}/short_photo.jpg`} alt="Short photo" className="profile-photo" />
-                <h1>Илья Волтов</h1>
-                <div className="position">Менеджер проектов<br />Product owner</div>
+                <h1>{t('name')}</h1>
+                <div className="position" dangerouslySetInnerHTML={{ __html: position }} />
             </div>
 
             <section className="about-section">
                 <div className="title">
-                    <h2>О себе</h2>
-                    <p>Высокомотивированный и ответственный менеджер проектов с 10-летним опытом управления и координации разработки.</p>
+                    <h2>{t('about.title')}</h2>
+                    <p>{t('about.description')}</p>
                 </div>
             </section>
 
             <section className="contact-section">
                 <div className="title">
-                    <h2>Контакты</h2>
+                    <h2>{t('contacts.title')}</h2>
                     <div className="info-section">
                         <div className="info-section link">
                             <i className="fas fa-envelope"></i>
@@ -37,7 +41,7 @@ function LeftColumn() {
                         <div className="info-section link">
                             <i className="fab fa-telegram-plane"></i>
                             <a target="_blank" rel="noopener noreferrer" href="https://t.me/IliaVoltov">
-                                <span>Iliya Voltov</span>
+                                <span>Ilya Voltov</span>
                             </a>
                         </div>
                     </div>
@@ -46,22 +50,22 @@ function LeftColumn() {
 
             <section className="intro-stack">
                 <div className="parent-container">
-                    <h1 className="title">Технологический стек</h1>
+                    <h1 className="title">{t('tech_stack.title')}</h1>
                     <div className="techStack">
                         <ul>
-                            <li><i className="fas fa-code"></i>C#; Python; JS</li>
-                            <li><i className="fas fa-laptop-code"></i>React; .NET; CatBoost</li>
-                            <li><i className="fas fa-database"></i>PostgreSQL; ClickHouse; MongoDB</li>
-                            <li><i className="fas fa-server"></i>Docker; Kubernetes; Jenkins</li>
-                            <li><i className="fas fa-globe"></i>Swagger (работа с API)</li>
-                            <li><i className="fas fa-tasks"></i>Apache Airflow</li>
-                            <li><i className="fas fa-code-branch"></i>GIT</li>
-                            <li><i className="fab fa-figma"></i>Figma</li>
+                            <li><i className="fas fa-code"></i>{t('tech_stack.languages')}</li>
+                            <li><i className="fas fa-laptop-code"></i>{t('tech_stack.frameworks')}</li>
+                            <li><i className="fas fa-database"></i>{t('tech_stack.databases')}</li>
+                            <li><i className="fas fa-server"></i>{t('tech_stack.tools')}</li>
+                            <li><i className="fas fa-globe"></i>{t('tech_stack.api')}</li>
+                            <li><i className="fas fa-tasks"></i>{t('tech_stack.airflow')}</li>
+                            <li><i className="fas fa-code-branch"></i>{t('tech_stack.git')}</li>
+                            <li><i className="fab fa-figma"></i>{t('tech_stack.figma')}</li>
                         </ul>
-                        <h4>Методологии</h4>
-                        <ul><li><i className="fas fa-chart-line"></i>Agile (Scrum, Kanban)</li></ul>
-                        <h4>Инструменты управления</h4>
-                        <ul><li><i className="fas fa-tools"></i>JetBrains Space; Jira</li></ul>
+                        <h4>{t('methodologies.title')}</h4>
+                        <ul><li><i className="fas fa-chart-line"></i>{t('methodologies.agile')}</li></ul>
+                        <h4>{t('management_tools.title')}</h4>
+                        <ul><li><i className="fas fa-tools"></i>{t('management_tools.tools')}</li></ul>
                     </div>
                 </div>
             </section>

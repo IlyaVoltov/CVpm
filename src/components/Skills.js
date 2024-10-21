@@ -1,8 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Skills.css';
 
 function SkillSection() {
+  const { t } = useTranslation();
   const [hoveredBlock, setHoveredBlock] = useState(null);
+  const [skillsData, setSkillsData] = useState([]);
+
+  useEffect(() => {
+    const data = [
+      {
+        title: t('skills.technicalSkills'),
+        skills: [
+          { name: t('skills.projectManagement'), description: t('skills.projectManagementDesc'), percentage: '75%' },
+          { name: t('skills.softwareLifecycleManagement'), description: t('skills.softwareLifecycleManagementDesc'), percentage: '70%' },
+          { name: t('skills.analyticsReporting'), description: t('skills.analyticsReportingDesc'), percentage: '80%' },
+          { name: t('skills.backlogManagement'), description: t('skills.backlogManagementDesc'), percentage: '80%' },
+        ],
+      },
+      {
+        title: t('skills.softSkills'),
+        skills: [
+          { name: t('skills.communication'), description: t('skills.communicationDesc'), percentage: '80%' },
+          { name: t('skills.leadership'), description: t('skills.leadershipDesc'), percentage: '85%' },
+          { name: t('skills.changeManagement'), description: t('skills.changeManagementDesc'), percentage: '80%' },
+          { name: t('skills.conflictManagement'), description: t('skills.conflictManagementDesc'), percentage: '85%' },
+        ],
+      },
+    ];
+
+    setSkillsData(data);
+  }, [t]);
 
   useEffect(() => {
     const skillBars = document.querySelectorAll('.skillbar');
@@ -11,13 +39,13 @@ function SkillSection() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          } else {
-            entry.target.classList.remove('animate');
+            const bar = entry.target;
+            bar.classList.add('animate'); // Добавляем анимацию при попадании в область видимости
+            observer.unobserve(bar); // Прекращаем наблюдение после анимации
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     skillBars.forEach((bar) => {
@@ -29,19 +57,15 @@ function SkillSection() {
         observer.unobserve(bar);
       });
     };
-  }, []);
+  }, [skillsData]); // Перезапускаем, если skillsData изменяется
 
-  // Компонент для попапа
-  const Popup = ({ content, header, isVisible }) => {
-    return (
-      isVisible && (
-        <div className="popup" role="tooltip" aria-hidden={!isVisible}>
-          <span className="popup-header">{header}</span>
-          <span className="popup-content">{content}</span>
-        </div>
-      )
-    );
-  };
+  const Popup = ({ content, isVisible }) => (
+    isVisible && (
+      <div className="popup" role="tooltip" aria-hidden={!isVisible}>
+        <span className="popup-content">{content}</span>
+      </div>
+    )
+  );
 
   const handleMouseEnter = (block) => {
     setHoveredBlock(block);
@@ -51,35 +75,13 @@ function SkillSection() {
     setHoveredBlock(null);
   };
 
-  const skillsData = [
-    {
-      title: 'Технические навыки',
-      skills: [
-        { name: 'Управление проектами', description: 'успешная реализация проектов с бюджетом до 300 млн. руб.', percentage: '75%' },
-        { name: 'Управление жизненным циклом разработки ПО', description: 'внедрение CI/CD', percentage: '70%' },
-        { name: 'Аналитика и отчётность', description: 'использование инструментов аналитики', percentage: '80%' },
-        { name: 'Управление бэклогом', description: 'поддержка бэклога из 70+ задач', percentage: '80%' },
-      ],
-    },
-    {
-      title: 'Софт-скиллы',
-      skills: [
-        { name: 'Коммуникации', description: 'эффективная коммуникация со всеми участниками проекта', percentage: '80%' },
-        { name: 'Лидерство и управление командой', description: 'руководство командами до 15 человек', percentage: '85%' },
-        { name: 'Управление изменениями', description: 'реинжиниринг бизнес-процессов Заказчика', percentage: '80%' },
-        { name: 'Управление конфликтами', description: 'решение конфликтов через переговоры и компромиссы', percentage: '85%' },
-      ],
-    },
-  ];
-
   return (
     <section className="detail-section skills">
       <div className="detail-title">
         <div className="title-icon">
           <i className="fas fa-laptop-code"></i>
         </div>
-        <span>Основные навыки</span>
-
+        <span>{t('skills.title')}</span>
         <div className="title-question">
           <div
             className="hover-container"
@@ -88,7 +90,7 @@ function SkillSection() {
           >
             <i className="fa fa-question" aria-hidden="true"></i>
             <Popup
-              content="процентные соотношения основаны на личном субъективном восприятии"
+              content={t('skills.popupContent')}
               isVisible={hoveredBlock === 'question'}
             />
           </div>
@@ -106,7 +108,10 @@ function SkillSection() {
                   <small>{description}</small>
                 </div>
                 <div className="sb-skeleton">
-                  <div className="skillbar" style={{ '--pgbar-length': percentage }}>
+                  <div
+                    className="skillbar"
+                    style={{ '--pgbar-length': percentage }}
+                  >
                     <span className="percentage-label">{percentage}</span>
                   </div>
                 </div>

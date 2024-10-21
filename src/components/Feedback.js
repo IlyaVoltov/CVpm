@@ -3,8 +3,10 @@ import emailjs from 'emailjs-com';
 import Modal from './Modal'; // Подключаем модальный компонент
 import './Feedback.css'; // Подключаем стили для кнопок и формы
 import './Modal.css';
+import { useTranslation } from 'react-i18next'; // Подключаем хук для перевода
 
 const FeedbackForm = ({ isOpen, onClose }) => {
+  const { t } = useTranslation(); // Инициализируем хук перевода
   const form = useRef();
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
@@ -20,7 +22,7 @@ const FeedbackForm = ({ isOpen, onClose }) => {
 
     if (!serviceId || !templateId || !userId) {
       console.error('Не установлены необходимые переменные среды для EmailJS');
-      setToastMessage('Ошибка настройки отправки. Пожалуйста, свяжитесь с администратором.');
+      setToastMessage(t('feedback.errorSettings')); // Используем перевод для сообщения об ошибке
       setShowToast(true);
       return;
     }
@@ -29,7 +31,7 @@ const FeedbackForm = ({ isOpen, onClose }) => {
 
     emailjs.sendForm(serviceId, templateId, form.current, userId)
       .then((result) => {
-        setToastMessage('Ваше сообщение отправлено! Я Вам отвечу в течение суток.');
+        setToastMessage(t('feedback.successMessage')); // Используем перевод для сообщения об успешной отправке
         setShowToast(true);
         setTimeout(() => {
           onClose();
@@ -37,7 +39,7 @@ const FeedbackForm = ({ isOpen, onClose }) => {
         }, 1500);
       })
       .catch((error) => {
-        setToastMessage('Ошибка. Повторите попытку позже.');
+        setToastMessage(t('feedback.errorMessage')); // Используем перевод для сообщения об ошибке
         setShowToast(true);
         setIsSubmitting(false);
       });
@@ -56,13 +58,13 @@ const FeedbackForm = ({ isOpen, onClose }) => {
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
-        <h2>Напишите мне</h2>
+        <h2>{t('feedback.title')}</h2> {/* Перевод заголовка */}
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="user_name" placeholder="Ваше имя" required />
-          <input type="email" name="user_email" placeholder="Ваш email" required />
-          <textarea name="message" placeholder="Ваше сообщение" required />
+          <input type="text" name="user_name" placeholder={t('feedback.namePlaceholder')} required /> {/* Перевод плейсхолдера */}
+          <input type="email" name="user_email" placeholder={t('feedback.emailPlaceholder')} required /> {/* Перевод плейсхолдера */}
+          <textarea name="message" placeholder={t('feedback.messagePlaceholder')} required /> {/* Перевод плейсхолдера */}
           <button type="submit" className="submit-button" disabled={isSubmitting}>
-            {isSubmitting ? 'Отправка...' : 'Отправить'}
+            {isSubmitting ? t('feedback.sending') : t('feedback.send')} {/* Перевод текста кнопки */}
           </button>
         </form>
         {showToast && (

@@ -1,0 +1,198 @@
+{
+  "topBar": {
+    "my_projects": "Мои проекты",
+    "courses": "Курсы",
+    "conferences": "Конференции",
+    "download_resume": "Скачать резюме",
+    "contact_me": "Написать мне"
+  },
+  "education": {
+    "title": "Образование",
+    "degree1": {
+      "title": "Эконометрика и статистический анализ",
+      "university": "Санкт-Петербургский государственный экономический университет",
+      "degree": "магистр",
+      "years": "2008 - 2013"
+    },
+    "degree2": {
+      "title": "Институт промышленного менеджмента, экономики и торговли",
+      "university": "Санкт-Петербургский политехнический университет Петра Великого",
+      "degree": "аспирант",
+      "years": "2017"
+    }
+  },
+  "contacts": {
+    "title": "Контакты"
+  },
+  "name": "Илья Волтов",
+  "position": "Менеджер проектов<br />Product Owner",
+  "about": {
+    "title": "О себе",
+    "description": "Высокомотивированный и ответственный менеджер проектов с 10-летним опытом управления и координации разработки."
+  },
+  "tech_stack": {
+    "title": "Технологический стек",
+    "languages": "C#; Python; JS",
+    "frameworks": "React; .NET; CatBoost",
+    "databases": "PostgreSQL; ClickHouse; MongoDB",
+    "tools": "Docker; Kubernetes; Jenkins",
+    "api": "Swagger (API Development)",
+    "airflow": "Apache Airflow",
+    "git": "GIT",
+    "figma": "Figma"
+  },
+  "methodologies": {
+    "title": "Методологии",
+    "agile": "Agile (Scrum, Kanban)"
+  },
+  "management_tools": {
+    "title": "Инструменты управления",
+    "tools": "JetBrains Space; Jira"
+  },
+  "hobbies": {
+    "title": "Хобби",
+    "pets": "Питомцы",
+    "pets_description": "кошка, кот и собака",
+    "chess": "Шахматы",
+    "chess_description": "ELO 1800",
+    "self_development": "Саморазвитие",
+    "self_development_description": "расширяю свой профессиональный стек",
+    "video_games": "Видео игры",
+    "video_games_description": "в курсе последних тенденций",
+    "language_learning": "Изучение языков",
+    "language_learning_description": "English / Deutsch"
+  },
+  "experience": {
+    "header": "Опыт работы",
+    "role1": {
+      "title": "Менеджер проектов",
+      "company": "GB Consulting (data-driven solutions)",
+      "description": "Оптимизация процесса взаимодействия между отделами разработки, составление PDP",
+      "responsibilities": {
+        "header": "Обязанности:",
+        "items": [
+          "Формулирование бизнес-задач (переговоры с клиентами)",
+          "Ведение проектной документации",
+          "Проведение спринт-ревью"
+        ]
+      },
+      "date": "2023 - 2024"
+    },
+    "role2": {
+      "title": "Начальник Управления разработки ПО",
+      "company": "ПАО \"Россети Научно-технический центр\"",
+      "description": "Разработано 4 крупных проекта, внедрение в 7 крупных компаний",
+      "responsibilities": {
+        "header": "Обязанности:",
+        "organizational": [
+          "Управление командой разработки",
+          "Agile (scrum/kanban)",
+          "Разработка дорожных карт и user-stories",
+          "Преобразование бизнес-требований в технические задачи"
+        ],
+        "technical": [
+          "Разработка технической стратегии для проекта",
+          "Выбор технологий и инструментов для проекта",
+          "Создание систем и алгоритмов для оптимального экспорта и обработки данных"
+        ]
+      },
+      "date": "2018 - 2023"
+    },
+    "role3": {
+      "title": "Аналитик данных",
+      "company": "ПАО \"Россети Ленэнерго\"",
+      "description": "Внедрение BI-систем, трансформация бизнес-процессов",
+      "responsibilities": {
+        "header": "Обязанности:",
+        "items": [
+          "Оптимальное планирование и совместная работа в крупной команде",
+          "Создание статистических моделей и применение машинного обучения для решения задач",
+          "Реализация end-to-end data pipeline от хранилища данных к BI"
+        ]
+      },
+      "date": "2014 - 2018"
+    },
+    "popup": "при наведении курсора на должность, будут отображены обязанности"
+  },
+  "skills": {
+    "title": "Основные навыки",
+    "technicalSkills": "Технические навыки",
+    "projectManagement": "Управление проектами",
+    "projectManagementDesc": "Успешная реализация проектов с бюджетом до 300 млн. руб.",
+    "softwareLifecycleManagement": "Управление жизненным циклом разработки ПО",
+    "softwareLifecycleManagementDesc": "Внедрение CI/CD.",
+    "analyticsReporting": "Аналитика и отчётность",
+    "analyticsReportingDesc": "Использование инструментов аналитики.",
+    "backlogManagement": "Управление бэклогом",
+    "backlogManagementDesc": "Поддержка бэклога из 70+ задач.",
+    "softSkills": "Софт-скиллы",
+    "communication": "Коммуникации",
+    "communicationDesc": "Эффективная коммуникация со всеми участниками проекта.",
+    "leadership": "Лидерство",
+    "leadershipDesc": "Руководство командами до 15 человек.",
+    "changeManagement": "Управление изменениями",
+    "changeManagementDesc": "Реинжиниринг бизнес-процессов Заказчика.",
+    "conflictManagement": "Управление конфликтами",
+    "conflictManagementDesc": "Решение конфликтов через переговоры и компромиссы.",
+    "popupContent": "процентные соотношения основаны на личном субъективном восприятии."
+  },
+  "feedback": {
+    "title": "Напишите мне",
+    "namePlaceholder": "Ваше имя",
+    "emailPlaceholder": "Ваш email",
+    "messagePlaceholder": "Ваше сообщение",
+    "sending": "Отправка...",
+    "send": "Отправить",
+    "successMessage": "Ваше сообщение отправлено! Я Вам отвечу в течение суток.",
+    "errorMessage": "Ошибка. Повторите попытку позже.",
+    "errorSettings": "Ошибка настройки отправки."
+  },
+  "ProjectsModal": {
+    "nameISON": "ИСОН - система помощи принятия решений",
+    "details": {
+      "energyConsumption": "выявление точек неучтенного потребления электроэнергии",
+      "decisionMaking": "сокращение времени на принятие решений",
+      "mlAlgorithms": "ансамбль ML алгоритмов / топология, как граф"
+    }
+  },
+  "projects": {
+    "project1": {
+      "name": "\"Управление НИОКР\" - ERP (управление бизнес-процессами)",
+      "details": {
+        "detail1": "Многомодульная система для управления бизнес-процессами компании",
+        "detail2": "Семантический поиск документов на основе ElasticSearch"
+      }
+    },
+    "project2": {
+      "name": "\"АСМД\" - система мониторинга и диагностики трансформаторного оборудования",
+      "details": {
+        "detail1": "Прогнозирование технического состояния оборудования",
+        "detail2": "Пакетная обработка ETL"
+      }
+    },
+    "project3": {
+      "name": "Системы бизнес-аналитики на базе Power BI и QlikView",
+      "details": {
+        "detail1": "Создание информационных панелей",
+        "detail2": "Создание сквозного конвейера обработки данных"
+      }
+    }
+  },
+  "CoursesModal": {
+    "name": "Школа DevOps, Санкт-Петербург",
+    "nameKarpov": "KARPOV.COURSES. Симулятор аналитика данных",
+    "profPM": "Профессия Middle&Senior Product Manager",
+    "generationP": "Поколение Python",
+    "interectSQL": "Интерактивный тренажер по SQL"
+  },
+  "ConferencesModal": {
+    "name": "в качестве докладчика",
+    "details": {
+      "energynet2021": "Energynet.CØN 2021, в формате online",
+      "energynet2020": "Energynet.CØN 2020, в формате online",
+      "powerBIMeetup": "Power BI meetup 2020, Санкт-Петербург",
+      "ibima": "33-я конференция IBIMA: 10-11 апреля 2019 года, Гранада, Испания",
+      "industrialManagement": "Научная конференция 'Промышленный менеджмент, экономика и экология - 2017', Санкт-Петербург"
+    }
+  }
+}

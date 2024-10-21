@@ -1,0 +1,198 @@
+{
+    "topBar": {
+      "my_projects": "My Projects",
+      "courses": "Courses",
+      "conferences": "Conferences",
+      "download_resume": "Download Resume",
+      "contact_me": "Contact Me"
+    },
+    "education": {
+      "title": "Education",
+      "degree1": {
+        "title": "Econometrics and Statistical Analysis",
+        "university": "Saint Petersburg State University of Economics",
+        "degree": "Master's",
+        "years": "2008 - 2013"
+      },
+      "degree2": {
+        "title": "Institute of Industrial Management, Economics and Trade",
+        "university": "Peter the Great St. Petersburg Polytechnic University",
+        "degree": "PhD student",
+        "years": "2017"
+      }
+    },
+    "contacts": {
+      "title": "Contacts"
+    },
+    "name": "Ilya Voltov",
+    "position": "Project Manager<br />Product Owner",
+    "about": {
+    "title": "About Me",
+    "description": "Highly motivated and responsible project manager with 10 years of experience in managing and coordinating development."
+    },
+    "tech_stack": {
+      "title": "Technology Stack",
+      "languages": "C#; Python; JS",
+      "frameworks": "React; .NET; CatBoost",
+      "databases": "PostgreSQL; ClickHouse; MongoDB",
+      "tools": "Docker; Kubernetes; Jenkins",
+      "api": "Swagger (API Development)",
+      "airflow": "Apache Airflow",
+      "git": "GIT",
+      "figma": "Figma"
+    },
+    "methodologies": {
+      "title": "Methodologies",
+      "agile": "Agile (Scrum, Kanban)"
+    },
+    "management_tools": {
+      "title": "Management Tools",
+      "tools": "JetBrains Space; Jira"
+    },
+    "hobbies": {
+      "title": "Hobby",
+      "pets": "Pets",
+      "pets_description": "two cats and a dog",
+      "chess": "Chess",
+      "chess_description": "ELO 1800",
+      "self_development": "Self-development",
+      "self_development_description": "expanding my professional stack",
+      "video_games": "Video games",
+      "video_games_description": "keep up to date with the latest trends",
+      "language_learning": "Learning languages",
+      "language_learning_description": "English / Deutsch"
+    },
+  "experience": {
+    "header": "Work experience",
+    "role1": {
+      "title": "Project Manager",
+      "company": "GB Consulting (data-driven solutions)",
+      "description": "Optimization of interaction processes between development departments, preparation of PDP",
+      "responsibilities": {
+        "header": "Responsibilities:",
+        "items": [
+          "Formulating business tasks (negotiations with clients)",
+          "Maintaining project documentation",
+          "Conducting sprint reviews"
+        ]
+      },
+      "date": "2023 - 2024"
+    },
+    "role2": {
+      "title": "Head of Software Development Department",
+      "company": "PJSC \"Rosseti Scientific and Technical Center\"",
+      "description": "Developed 4 major projects, implemented in 7 large companies",
+      "responsibilities": {
+        "header": "Responsibilities:",
+        "organizational": [
+          "Managing the development team",
+          "Agile (scrum/kanban)",
+          "Developing roadmaps and user stories",
+          "Transforming business requirements into technical tasks"
+        ],
+        "technical": [
+          "Developing a technical strategy for the project",
+          "Selecting technologies and tools for the project",
+          "Creating systems and algorithms for optimal data export and processing"
+        ]
+      },
+      "date": "2018 - 2023"
+    },
+    "role3": {
+      "title": "Data Analyst",
+      "company": "PJSC \"Rosseti Lenenergo\"",
+      "description": "Implementation of BI systems, transformation of business processes",
+      "responsibilities": {
+        "header": "Responsibilities:",
+        "items": [
+          "Optimal planning and collaboration in a large team",
+          "Creating statistical models and applying machine learning to solve tasks",
+          "Implementing end-to-end data pipeline from data warehouse to BI"
+        ]
+      },
+      "date": "2014 - 2018"
+    },
+    "popup": "when hovering over the position, responsibilities will be displayed"
+  },
+  "skills": {
+    "title": "Key Skills",
+    "technicalSkills": "Technical Skills",
+    "projectManagement": "Project Management",
+    "projectManagementDesc": "Successful implementation of projects with a budget of up to 300 million rubles.",
+    "softwareLifecycleManagement": "Software Lifecycle Management",
+    "softwareLifecycleManagementDesc": "Implementation of CI/CD.",
+    "analyticsReporting": "Analytics and Reporting",
+    "analyticsReportingDesc": "Use of analytical tools.",
+    "backlogManagement": "Backlog Management",
+    "backlogManagementDesc": "Support for a backlog of 70+ tasks.",
+    "softSkills": "Soft Skills",
+    "communication": "Communication",
+    "communicationDesc": "Effective communication with all project participants.",
+    "leadership": "Leadership",
+    "leadershipDesc": "Managing teams of up to 15 people.",
+    "changeManagement": "Change Management",
+    "changeManagementDesc": "Reengineering client's business processes.",
+    "conflictManagement": "Conflict Management",
+    "conflictManagementDesc": "Resolving conflicts through negotiation and compromise.",
+    "popupContent": "the percentage ratios are based on personal subjective perception."
+  },
+  "feedback": {
+    "title": "Write to me",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "sending": "Sending...",
+    "send": "Send",
+    "successMessage": "Your message has been sent! I will answer you within 24 hours.",
+    "errorMessage": "Mistake. Please try again later.",
+    "errorSettings": "Sending setup error."
+  },
+  "ProjectsModal": {
+    "nameISON": "ISON - decision-making assistance system",
+    "details": {
+      "energyConsumption": "identification of unaccounted electricity consumption points",
+      "decisionMaking": "reducing decision-making time",
+      "mlAlgorithms": "ensemble of ML algorithms / topology as a graph"
+    }
+  },
+  "projects": {
+    "project1": {
+      "name": "\"R&D Management\" - ERP (business process management)",
+      "details": {
+        "detail1": "A multi-module system for managing the company's business processes",
+        "detail2": "Semantic document search based on ElasticSearch"
+      }
+    },
+    "project2": {
+      "name": "\"ASMD\" - monitoring and diagnostics system for transformer equipment",
+      "details": {
+        "detail1": "forecasting the technical condition of equipment",
+        "detail2": "batch ETL processing"
+      }
+    },
+    "project3": {
+      "name": "Business Intelligence Systems based on Power BI and QlikView",
+      "details": {
+        "detail1": "Business Intelligence Systems based on Power BI and QlikView",
+        "detail2": "creation of a data processing pipeline to ensure the full cycle of processing — from data warehouse to BI reports"
+      }
+    }
+  },
+  "CoursesModal": {
+    "name": "DevOps School, St. Petersburg",
+    "nameKarpov": "KARPOV.COURSES. Data Analytics Simulator",
+    "profPM": "Middle&Senior Product Manager",
+    "generationP": "Python Generation",
+    "interectSQL": "Interactive SQL Simulator"
+  },
+  "ConferencesModal": {
+    "name": "as a speaker",
+    "details": {
+      "energynet2021": "Energynet.CØN 2021, online",
+      "energynet2020": "Energynet.CØN 2020, online",
+      "powerBIMeetup": "Power BI meetup 2020, Saint-Petersburg",
+      "ibima": "33rd IBIMA Conference: 10-11 April 2019, Granada, Spain",
+      "industrialManagement": "Scientific conference 'Industrial Management, Economics and Ecology - 2017', St. Petersburg"
+    }
+  }
+}
